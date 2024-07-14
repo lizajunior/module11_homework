@@ -1,0 +1,30 @@
+{
+  "name": "homework_module11",
+  "version": "1.0.0",
+  "description": "unit-tests on a percentFunction",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizajunior/module11_homework.git"
+  },
+  "keywords": [
+    "jest",
+    "node",
+    "javascript",
+    "calculator",
+    "percentages"
+  ],
+  "author": "lisa djundiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizajunior/module11_homework/issues"
+  },
+  "homepage": "https://github.com/lizajunior/module11_homework#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.8",
+    "jest": "^29.7.0"
+  }
+}
