@@ -1,21 +1,62 @@
 const { getPercents } = require('../index.js');
 describe('get percents from number', () => {
+
   it('should calculate 10% of 100 correctly', () => {
-    let percent = 10;
-    let number = 100;
-    let result = getPercents(percent, number);
+    const percent = 10;
+    const number = 100;
+    const result = getPercents(percent, number);
     expect((result)).toBe(10);
   });
+
   it('should calculate 30% of 70 correctly', () => {
-    let percent = 30;
-    let number = 70;
-    let result = getPercents(percent, number);
+    const percent = 30;
+    const number = 70;
+    const result = getPercents(percent, number);
     expect(result).toBe(21);
   });
-  it('should calculate 15% of 80 correctly', () => {
-    let percent = 15;
-    let number = 80;
-    let result = getPercents(percent, number);
-    expect(result).toBe(12);
+
+  //пограничные события
+  it('should calculate 0% of 100 correctly', () => {
+    const percent = 0;
+    const number = 100;
+    const result = getPercents(percent, number);
+    expect(result).toBe(0);
   });
+
+  it('should calculate 100% of 100 correctly', () => {
+    const percent = 100;
+    const number = 0;
+    const result = getPercents(percent, number);
+    expect(result).toBe(0);
+  });
+
+  it('should calculate 100% of 100 correctly', () => {
+    const percent = 100;
+    const number = 100;
+    const result = getPercents(percent, number);
+    expect(result).toBe(100);
+  });
+
+  it('should calculate 0% of 100 correctly when percent is typeof string', ()=>{
+    const percent = "0";
+    const number = 100;
+    const result = getPercents(percent, number);
+    expect(result).toBe(0);
+  })
+
+  it('should calculate 0% of 100 correctly when number is typeof string', ()=>{
+    const percent = 0;
+    const number = "100";
+    const result = getPercents(percent, number);
+    expect(result).toBe(0);
+  })
+
+  
+  it('should calculate 20% of 200 correctly when both are typeof string', ()=>{
+    const percent = "20";
+    const number = "200";
+    const result = getPercents(percent, number);
+    expect(result).toBe(40);
+  })
+
 });
