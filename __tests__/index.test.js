@@ -50,7 +50,6 @@ describe('get percents from number', () => {
     const result = getPercents(percent, number);
     expect(result).toBe(0);
   })
-
   
   it('should calculate 20% of 200 correctly when both are typeof string', ()=>{
     const percent = "20";
@@ -58,5 +57,17 @@ describe('get percents from number', () => {
     const result = getPercents(percent, number);
     expect(result).toBe(40);
   })
+
+  it('should throw an error when number is not a number', () => {
+    const percent = 50;
+    const number = "abc";
+    expect(() => getPercents(percent, number)).toThrow('Both arguments must be numbers or convertible to numbers');
+  });
+
+  it('should throw an error when percent is not a number', () => {
+    const percent = "abc";
+    const number = 50;
+    expect(() => getPercents(percent, number)).toThrow('Both arguments must be numbers or convertible to numbers');
+  });
 
 });
